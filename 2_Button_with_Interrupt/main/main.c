@@ -45,7 +45,7 @@ void setup_pins() {
   // GPIO 5, 6 입력 인터럽트 설정
   io_conf.intr_type = GPIO_PIN_INTR_NEGEDGE;  // 하강 엣지에 반응하는 인터럽트 활성화. PULLUP 상태이기 때문에 버튼이 떨어질 때 반응
   io_conf.mode = GPIO_MODE_INPUT;             // 입력 모드로 설정
-  io_conf.pin_bit_mask = GPIO_BUTTON_MASK;     // 모드를 설정할 핀 저장
+  io_conf.pin_bit_mask = GPIO_BUTTON_MASK;    // 모드를 설정할 핀 저장
   io_conf.pull_up_en = GPIO_PULLUP_ENABLE;    // 내장 풀업 활성화
   io_conf.pull_down_en = GPIO_PULLDOWN_DISABLE;  // 내장 풀다운 비활성화
   gpio_config(&io_conf);        // 위 설정값으로 GPIO 설정
