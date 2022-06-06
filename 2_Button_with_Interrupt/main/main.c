@@ -19,7 +19,7 @@ static xQueueHandle gpio_evt_queue = NULL;
 
 // IRAM_ATTR: 함수를 RAM에 미리 올려두어 인터럽트 처리 속도를 빠르게 함
 // GPIO 인터럽트 핸들러
-static void IRAM_ATTR gpio_isr_handler(void* arg) {
+static void gpio_isr_handler(void* arg) {
   uint32_t gpio_num = (uint32_t) arg; // 인터럽트 파라미터 저장
   xQueueSendFromISR(gpio_evt_queue, &gpio_num, NULL); // 인터럽트 핸들러에서는 xQueueSendFromISR를 사용해 큐에 데이터를 push
 }
