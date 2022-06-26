@@ -83,10 +83,10 @@ void wifi_example(wifi_config_t* wifi_config, wifi_mode_t mode) {
   ESP_ERROR_CHECK(esp_event_handler_instance_register(
       IP_EVENT, IP_EVENT_STA_GOT_IP, &event_handler, NULL, &instance_got_ip)); // IP Event 중 IP 획득 이벤트를 수신하는 핸들러 설정
 
-  ESP_ERROR_CHECK(esp_wifi_set_mode(mode));
 
   // 2. Configure Phase ------------------------------------
-  ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, wifi_config)); // 2. Wi-Fi 설정
+  ESP_ERROR_CHECK(esp_wifi_set_mode(mode)); // 2. Wi-Fi 설정 (동작 모드 지정)
+  ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, wifi_config)); // 와이파이 설정
   
   // 3. Start Phase ------------------------------------
   ESP_ERROR_CHECK(esp_wifi_start()); // 3.1 Wi-Fi 시작
