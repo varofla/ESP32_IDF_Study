@@ -31,7 +31,7 @@ void event_handler(void* arg, esp_event_base_t event_base, int32_t event_id,
                    void* event_data) {
   if(event_base == WIFI_EVENT) {
     switch (event_id) {
-      case WIFI_EVENT_STA_START: // 4.3 Event Task로부터의 WIFI_EVENT_STA_START 이벤트 수신
+      case WIFI_EVENT_STA_START: // 3.3 Event Task로부터의 WIFI_EVENT_STA_START 이벤트 수신
         // 4. Connect Phase ------------------------------------
         esp_wifi_connect(); // 4.1 Wi-Fi 연결
         break;
